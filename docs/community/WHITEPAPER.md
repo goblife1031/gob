@@ -50,7 +50,11 @@ Full breakdown of allocation, vesting, and fees is in `docs/community/TOKENOMICS
 
 ## 5. Team / community
 
-[OPTIONAL: If the team wants to identify itself (fully, partially, or pseudonymously), say so here. If the team is anonymous, say that plainly too — anonymity is common and not inherently a red flag, but pretending to be doxxed when you aren't is the kind of thing that erodes trust fast. State the honest position.]
+Gob is built and run by one person, operating publicly under the handle `goblife1031` — the same identity behind this repo's commit history and the creator wallet disclosed in `TOKENOMICS.md`. That's a deliberate choice, not an attempt to look like something it isn't: no real name is attached to this project, and that's stated here plainly rather than left for someone to assume one way or the other.
+
+Being pseudonymous isn't a red flag by itself — plenty of legitimate projects in this space are — but it does mean the usual shortcuts for trust (a doxxed founder, a company behind it) don't apply here. What can actually be verified instead: the token's on-chain mechanics (revoked mint authority, locked LP, disclosed and vested creator allocation — see `TOKENOMICS.md`), this repo's public commit history, and how the project behaves over time.
+
+Gob is a solo effort as of this writing, with the door open to bringing others in as the project grows. If that changes, this section gets updated to say so honestly rather than continuing to describe something that's no longer true.
 
 ## 6. Risks
 
