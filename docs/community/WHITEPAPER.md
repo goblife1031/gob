@@ -15,9 +15,9 @@ This document describes the project as it exists today and the intentions of the
 
 ## 2. What is Gob?
 
-[ONE PARAGRAPH: the actual story/lore/meme behind "Gob" — where the name comes from, the character or joke, the tone of the community. This is the part only you and your team can write authentically — don't let this stay generic.]
+Gob escaped the basement. Gob found the internet. Somewhere along the way, Gob ended up grinding inside someone else's game for a skin that was always "one day" away — then the game disappeared. Gob didn't. So Gob started building his own thing instead: same Gob, different foundation, this time on Solana.
 
-$GOBB started as a community token on Solana and is intended to grow into [DESCRIBE THE "LATER UTILITY" — e.g., a tool, an app, a game, a service — even a one-line placeholder like "a community-governed utility to be defined via roadmap votes" is fine if it's not decided yet]. Until that utility ships, $GOBB is, functionally, a community and speculative asset — that should be stated plainly rather than implied otherwise.
+$GOBB launched quietly, on-chain, before any marketing or announcement — the team built the actual token structure (locked liquidity, disclosed and vested creator allocation, revoked mint authority) first, and only started telling the story after there was something real to point to. [ADD, once decided: what the "later utility" direction actually becomes — the team has deliberately not pre-announced this; see `ROADMAP.md` Phase 3.] Until that utility ships, $GOBB is, functionally, a community and speculative asset — that should be stated plainly rather than implied otherwise.
 
 ## 3. Token facts
 
@@ -26,13 +26,16 @@ $GOBB started as a community token on Solana and is intended to grow into [DESCR
 | Name | Gob |
 | Ticker | $GOBB |
 | Chain | Solana (SPL token) |
-| Contract address (CA) | [ADD CA HERE ONCE MINTED — see `docs/runbooks/CA_LAUNCH_RUNBOOK.md`] |
-| Launch venue | pump.fun |
-| Total supply | [ADD SUPPLY] |
-| Decimals | [ADD DECIMALS, typically 6 for pump.fun-created tokens] |
-| Mint/freeze authority | [pump.fun-created tokens have mint and freeze authority revoked automatically at creation — confirm this in your wallet's token view after minting and state it here, since it's a real trust signal worth pointing to] |
+| Contract address (CA) | `Cd8VXseSs7SYZhdQ57EkP7gugDzrGnZhKdfwXeYRjupx` — verify at solscan.io/token/Cd8VXseSs7SYZhdQ57EkP7gugDzrGnZhKdfwXeYRjupx |
+| Launch venue | Jupiter Studio (Meteora dynamic bonding curve) |
+| Total supply | 1,000,000,000 |
+| Decimals | 6 |
+| Mint authority | Revoked ✓ (verified on-chain) |
+| Metadata | Immutable ✓ (verified on-chain) |
 
-**A note on verification:** because pump.fun (and Solana generally) make it trivial for anyone to create a token with the same name and ticker, the *only* thing that makes a token "the real $GOBB" is the contract address. Every piece of official messaging (website, X/Twitter, Telegram/Discord) should show the same CA, and community members should be told, explicitly and repeatedly, to check the CA before buying — never trust a name or logo alone.
+Full breakdown of allocation, vesting, and fees is in `docs/community/TOKENOMICS.md`.
+
+**A note on verification:** because Solana (and launch platforms like Jupiter Studio or pump.fun) make it trivial for anyone to create a token with the same name and ticker, the *only* thing that makes a token "the real $GOBB" is the contract address above. Every piece of official messaging (website, X/Twitter, Telegram/Discord) should show that same CA, and community members should be told, explicitly and repeatedly, to check it before buying — never trust a name or logo alone. There is only one $GOBB mint; see the FAQ ("Is there another $GOBB mint I should know about?") for how an earlier internal note about a supposed second, dormant listing was resolved — it was a stale description of this same token, not a separate mint.
 
 ## 4. Where to find official links
 
@@ -42,7 +45,7 @@ $GOBB started as a community token on Solana and is intended to grow into [DESCR
 | X / Twitter | [ADD URL] |
 | Telegram | [ADD URL, if used] |
 | Discord | [ADD URL, if used] |
-| pump.fun page | [ADD URL once live] |
+| Jupiter Studio page | [ADD URL] |
 | This repo | [ADD GITHUB URL once pushed] |
 
 ## 5. Team / community

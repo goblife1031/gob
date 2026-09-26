@@ -1,44 +1,63 @@
 # $GOBB — Tokenomics
 
-**Status:** Draft — this is a template. Fill in real numbers before publishing anywhere, and make sure the numbers here match what's actually on-chain once the token is minted. A tokenomics page that doesn't match the chain is the fastest way to lose community trust.
+**Status:** Real numbers, verified on-chain (Solscan) as of 2026-09-22. This replaces the earlier generic pump.fun-based template — the actual launch happened on **Jupiter Studio**, not pump.fun.
 
-## Supply
+## Token facts
 
 | Field | Value |
 |---|---|
-| Total supply | [ADD — pump.fun's standard is 1,000,000,000 (1B) tokens; confirm if you're using the default] |
-| Circulating at launch | 100% via the bonding curve (this is how pump.fun works — there is no separate presale or team allocation carved out unless you build one outside the standard "meme" mode) |
-| Mint authority | Revoked at creation (standard for pump.fun tokens) |
-| Freeze authority | Revoked at creation (standard for pump.fun tokens) |
+| Name / Ticker | GOB / $GOBB |
+| Chain | Solana (SPL token) |
+| Contract address (CA) | `Cd8VXseSs7SYZhdQ57EkP7gugDzrGnZhKdfwXeYRjupx` |
+| Launch venue | Jupiter Studio (Meteora dynamic bonding curve) |
+| Total supply | 1,000,000,000 $GOBB |
+| Decimals | 6 |
+| Mint authority | Revoked ✓ (verified on Solscan — set to the System Program, i.e. no one can mint more) |
+| Metadata | Immutable ✓ (name/symbol/image can't be changed after the fact) |
+| First mint | ~2026-09-16 |
 
-## How initial distribution actually works on pump.fun
+Anyone can verify all of the above directly at `solscan.io/token/Cd8VXseSs7SYZhdQ57EkP7gugDzrGnZhKdfwXeYRjupx` — don't take our word for it, check it yourself.
 
-Be accurate with your community about this — it's a common source of confusion:
+## How it launched
 
-- In pump.fun's default ("meme") mode, there is **no team allocation, no presale, and no vesting**. 100% of supply enters the bonding curve at creation, and anyone (including the creator) buys in on the same curve as everyone else.
-- If the team wants an allocation, that has to be done deliberately — either via pump.fun's "Custom" launch mode (which supports optional vesting) or by the creator doing a normal buy on the curve right after launch like any other participant, and disclosing that publicly (e.g., "the team bought X% at launch, wallet: [address]").
-- Undisclosed team buys that are later discovered are one of the fastest ways to torch community trust in this space. Whatever the team does here, write it down and publish it.
+$GOBB launched through Jupiter Studio's bonding curve mechanism (a Meteora Dynamic Bonding Curve, or "DBC"). That means:
 
-[FILL IN: which mode you're using, whether the team is taking any allocation, and if so, how much, from which wallet, and any vesting/lockup commitment.]
+- **Initial market cap:** $5,000.
+- **Graduation target:** $85,000 MC. At graduation, the curve migrates into a Meteora DAMM v2 liquidity pool and trading moves out of the bonding-curve phase.
+- There was no separate presale distinct from the curve itself — anyone (including the creator) buys in on the same curve, at the same price, as everyone else, at whatever point they buy.
+
+## Creator allocation & disclosure
+
+Full transparency here, because undisclosed team buys are one of the fastest ways to torch community trust:
+
+| | |
+|---|---|
+| Creator allocation | 5% of supply, on a **12-month linear vest** |
+| Creator's personal buy | ~2.1% of supply, bought on the open curve like any other participant (separate from the 5% allocation) |
+| Combined eventual creator exposure | ~7.1% — but not all liquid at once. The 2.1% personal buy is liquid now; the 5% allocation unlocks gradually over 12 months |
+| Creator wallet | `5qkfAMVjZczU3Y1vNwuh7wTCPRqWthyFGcRShp7ZcYQ6` — publicly disclosed so anyone can track vesting and holdings directly on-chain |
+
+The honest read on the trust risk here: the creator *could*, in theory, eventually sell the personal buy plus the vested allocation back into the market and hurt price/liquidity. There's no code that prevents that — a vesting schedule limits *when* tokens become liquid, not what happens once they are. What limits the incentive to do that is economic, not technical: the fee structure below rewards sustained trading activity over a one-time price spike, so dumping the position would work against the thing that actually pays out over time.
 
 ## Fees
 
-| Fee | Rate | Goes to |
+| Fee | Rate | Notes |
 |---|---|---|
-| Trading fee (bonding curve phase) | ~1–1.25% per trade (protocol + creator split — confirm current rate on pump.fun at launch time, this changes) | Split between pump.fun protocol and the token creator |
-| Creator fee | A portion of the above | Creator wallet — [ADD WALLET ADDRESS if you want this public] |
-| Post-graduation (PumpSwap) | Tiered, roughly 0.30–1.25% depending on pool | Split between protocol and liquidity providers |
+| Transaction fee | 1% per trade | This is the number that matters most here — creator economics are tied to **transaction volume**, not market cap. That's a deliberate choice: it means the team is incentivized to build sustained usage and trading activity rather than chase a market-cap number and disappear. |
 
 ## Liquidity
 
-- Liquidity lives in the bonding curve until the token "graduates" (reaches roughly $69K market cap on pump.fun as of 2026 — confirm the current graduation threshold on pump.fun before publishing, it has changed before and may change again).
-- On graduation, liquidity migrates automatically into a PumpSwap pool.
-- Fewer than 2% of tokens launched on pump.fun ever reach graduation — this isn't a guarantee of anything, just useful context to set expectations honestly with the community rather than implying graduation is a formality.
+- **100% of LP is permanently locked.** The creator cannot pull liquidity after graduation, full stop — this is enforced by the mechanism itself, not a promise.
+- Combined with the revoked mint authority, the two classic "rug" mechanisms (mint more supply, or pull the liquidity) are both technically closed off, not just pinky-promised.
 
-## What happens to the utility roadmap allocation?
+## Philosophy — why the numbers look like this
 
-[If any future utility product (see `docs/technical/`) will need its own token allocation, treasury, or funding mechanism, describe that here — even a placeholder like "TBD, to be proposed and voted on by the community before any allocation is made" is better than silence.]
+Straight from the team's own words, worth stating plainly rather than paraphrasing into something blander: *"I want money. You want money. Devs want success in their product. We make money when Gob gets real volume — not from a chart pump. Trust, community, no DeFi/TA bullshit."*
+
+Practically, that means:
+- Market cap is treated as a milestone, not the goal — recurring transaction volume is what actually funds anything that gets built later.
+- There is deliberately no "giant roadmap" locked in yet. The team would rather figure out what Gob becomes together with the community than pre-announce a utility no one asked for. See `ROADMAP.md` for how that's framed.
 
 ## Disclaimer
 
-Tokenomics can change only in the ways that are actually possible on-chain (e.g., mint authority is revoked, so total supply cannot be inflated after launch). Anything the team commits to that ISN'T enforced on-chain (vesting promises, "we won't sell," treasury commitments) is a social commitment, not a technical guarantee — say that plainly rather than implying otherwise.
+None of the above is a promise about price, returns, or liquidity depth. Vesting schedules and locked LP are real, verifiable, on-chain constraints — they close off specific rug mechanisms, but they don't guarantee the token succeeds, trades actively, or is worth anything at any given time. Only ever risk what you can afford to lose completely.
