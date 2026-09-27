@@ -41,12 +41,12 @@ Full breakdown of allocation, vesting, and fees is in `docs/community/TOKENOMICS
 
 | Channel | Link |
 |---|---|
-| Website | [ADD URL] |
-| X / Twitter | [ADD URL] |
-| Telegram | [ADD URL, if used] |
-| Discord | [ADD URL, if used] |
-| Jupiter Studio page | [ADD URL] |
-| This repo | [ADD GITHUB URL once pushed] |
+| Website | https://gobbuild.io |
+| X / Twitter | https://x.com/gob1031 |
+| Telegram | https://t.me/+s0LR6wDUv0wyZmVh |
+| Discord | https://discord.gg/DRrvKNu2g |
+| Jupiter Studio page | https://jup.ag/tokens/Cd8VXseSs7SYZhdQ57EkP7gugDzrGnZhKdfwXeYRjupx |
+| This repo | https://github.com/goblife1031/gob |
 
 ## 5. Team / community
 
