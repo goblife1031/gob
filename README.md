@@ -2,6 +2,8 @@
 
 Community token and future-utility project on Solana.
 
+> **This is the only official Gob repository.** If you're reading a copy of this content anywhere else — another repo, a cloned site, a different domain — verify it against `gobbuild.io` and [@gob1031](https://x.com/gob1031) before trusting anything in it, including any contract address. Anyone can fork or copy public files on GitHub; only this repository's commit history under this account is authentic.
+
 > **Draft repo.** Several files in here contain `[ADD ...]` placeholders. Fill those in before treating anything in `docs/community/` as public-ready — they're meant to be accurate the day you publish them, not aspirational.
 
 ## Structure
