@@ -6,7 +6,7 @@
 - [x] Brand/story built out around Gob (see `WHITEPAPER.md`)
 - [x] $GOBB minted on Jupiter Studio — live bonding curve, real supply, mint authority revoked, LP set to permanently lock at graduation
 - [x] Creator allocation (5%, 12-month vest) and personal buy (~2.1%) both on-chain and disclosed in `TOKENOMICS.md`
-- [ ] Public channels (official X, Telegram/Discord, this website) — not yet pointed at the live CA; **zero marketing has happened so far, by design**
+- [x] Public channels (official X, Telegram/Discord, this website) — all live
 
 ## Phase 1 — Reveal
 - [x] Soft reveal to early adopters via this GitHub repo (CA included in the docs here) — ahead of any public announcement, by design
