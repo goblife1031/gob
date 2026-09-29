@@ -5,7 +5,7 @@
 ## Phase 0 — Foundation (done, quietly)
 - [x] Brand/story built out around Gob (see `WHITEPAPER.md`)
 - [x] $GOBB minted on Jupiter Studio — live bonding curve, real supply, mint authority revoked, LP set to permanently lock at graduation
-- [x] Creator allocation (5%, 12-month vest) and personal buy (~2.1%) both on-chain and disclosed in `TOKENOMICS.md`
+- [x] Creator vesting allocation (5%, streams post-graduation) and separate dev-held liquid balance (~5.38%, updated 2026-09-29) both disclosed in `TOKENOMICS.md`
 - [x] Public channels (official X, Telegram/Discord, this website) — all live
 
 ## Phase 1 — Reveal

@@ -15,7 +15,12 @@ Through Jupiter Studio's bonding curve, and later through the Meteora DAMM v2 po
 Anyone can create a token with the name "Gob" and ticker "$GOBB" — this is trivially easy on Solana (via Jupiter Studio, pump.fun, or otherwise) and happens constantly to popular-sounding names. The name and ticker mean nothing on their own. The **contract address** above is the only thing that identifies the real token. Always cross-check the CA shown in your wallet or on a DEX against the CA posted on the official website and official X account — not against a link someone DMs you or posts in a comment.
 
 ## Is there a presale or team allocation?
-Yes, fully disclosed: a 5% creator allocation on a 12-month linear vest, plus a separate ~2.1% personal buy by the creator on the open curve (same price as everyone else). Both are held in a publicly disclosed wallet — see `docs/community/TOKENOMICS.md` for the full breakdown and the wallet address so you can verify it yourself on-chain.
+Yes, fully disclosed, and it's two separate pools, not one number:
+
+1. A **5% creator vesting allocation** (Jupiter Studio's built-in creator vesting mechanism, 12-month linear). This has **not** been delivered to the creator wallet yet — it streams out of the bonding curve pool starting after $GOBB graduates to a full Meteora pool.
+2. A **separate liquid balance** the team already holds on-chain, currently ~5.38% of supply (53,796,322 $GOBB) as of 2026-09-29 — grown from an initial ~2.1% open-curve buy at launch, expanded to fund marketer payments and future project costs.
+
+Combined, once the 5% vesting allocation fully unlocks post-graduation, total eventual dev exposure will be ~10.38% of supply. Both pools are visible in the same publicly disclosed wallet — see `docs/community/TOKENOMICS.md` for the full breakdown, current numbers, and the wallet address so you can verify it yourself on-chain.
 
 ## Is $GOBB an investment?
 No. $GOBB is a speculative digital token launched for a community, with an intended future utility described in the roadmap. It is not a security, and the team is not promising returns, price performance, or that any planned utility will ship on any particular timeline. Only ever spend what you can afford to lose completely.

@@ -1,6 +1,6 @@
 # $GOBB — Tokenomics
 
-**Status:** Real numbers, verified on-chain (Solscan) as of 2026-09-22. This replaces the earlier generic pump.fun-based template — the actual launch happened on **Jupiter Studio**, not pump.fun.
+**Status:** Real numbers, verified on-chain (Solscan) as of 2026-09-29. This replaces the earlier generic pump.fun-based template — the actual launch happened on **Jupiter Studio**, not pump.fun.
 
 ## Token facts
 
@@ -28,16 +28,18 @@ $GOBB launched through Jupiter Studio's bonding curve mechanism (a Meteora Dynam
 
 ## Creator allocation & disclosure
 
-Full transparency here, because undisclosed team buys are one of the fastest ways to torch community trust:
+Full transparency here, because undisclosed team buys — or undisclosed team sales — are one of the fastest ways to torch community trust:
 
 | | |
 |---|---|
-| Creator allocation | 5% of supply, on a **12-month linear vest** |
-| Creator's personal buy | ~2.1% of supply, bought on the open curve like any other participant (separate from the 5% allocation) |
-| Combined eventual creator exposure | ~7.1% — but not all liquid at once. The 2.1% personal buy is liquid now; the 5% allocation unlocks gradually over 12 months |
-| Creator wallet | `5qkfAMVjZczU3Y1vNwuh7wTCPRqWthyFGcRShp7ZcYQ6` — publicly disclosed so anyone can track vesting and holdings directly on-chain |
+| Creator vesting allocation | 5% of supply (50,000,000 $GOBB), **12-month linear vest** via Jupiter Studio's built-in creator vesting mechanism. This streams out of the bonding curve pool starting after graduation — it is **not** currently sitting in the creator wallet |
+| Dev-held liquid balance | ~5.38% of supply (53,796,322 $GOBB) as of 2026-09-29, held directly in the disclosed wallet today — grown from an initial ~2.1% open-curve buy at launch, expanded to fund marketer payments and future project costs |
+| Combined eventual dev exposure | ~10.38% of supply once the vesting allocation fully unlocks post-graduation — these are two separate pools, not one number, and are not additive today |
+| Creator wallet | `5qkfAMVjZczU3Y1vNwuh7wTCPRqWthyFGcRShp7ZcYQ6` — publicly disclosed so anyone can track both the liquid balance and, once graduation happens, the vesting stream directly on-chain |
 
-The honest read on the trust risk here: the creator *could*, in theory, eventually sell the personal buy plus the vested allocation back into the market and hurt price/liquidity. There's no code that prevents that — a vesting schedule limits *when* tokens become liquid, not what happens once they are. What limits the incentive to do that is economic, not technical: the fee structure below rewards sustained trading activity over a one-time price spike, so dumping the position would work against the thing that actually pays out over time.
+**Update, 2026-09-29:** the dev-held liquid balance above (separate from the 5% vesting allocation, which is untouched and hasn't started streaming yet) was expanded this week to fund marketer payments and future project costs — some of it was sold, moved through another token, and bought back into the same disclosed wallet, growing the liquid balance from its original ~2.1% to the current ~5.38%. That activity is visible on-chain in the wallet's own transaction history — we're stating it here rather than leaving it for someone else to find first.
+
+The honest read on the trust risk here: the creator *could*, in theory, eventually sell the liquid balance plus the vested allocation (once it starts unlocking post-graduation) back into the market and hurt price/liquidity — and as this update shows, part of the liquid balance already has moved once, for a disclosed reason. There's no code that prevents further sales — a vesting schedule limits *when* the 5% allocation becomes liquid, not what happens once it does. What limits the incentive to do that is economic, not technical: the fee structure below rewards sustained trading activity over a one-time price spike, so dumping either pool would work against the thing that actually pays out over time.
 
 ## Fees
 
