@@ -10,7 +10,7 @@
 
 ## Phase 1 — Reveal
 - [x] Soft reveal to early adopters via this GitHub repo (CA included in the docs here) — ahead of any public announcement, by design
-- [ ] Publish the CA everywhere at once for the general public — website, pinned X post, community announcement — the moment the team decides to actually go wide
+- [x] Publish the CA everywhere at once for the general public — website, pinned X post, community announcement — done 2026-09-29 with the full public reveal
 - [ ] Tell the real story: Gob didn't wait for permission or a marketing plan, he just started building on-chain first. That's a stronger, truer narrative than a countdown-timer launch, and it's worth leaning into rather than pretending the token is brand new the day it's announced.
 
 ## Phase 2 — Community & volume

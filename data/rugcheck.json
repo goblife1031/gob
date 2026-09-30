@@ -1,0 +1,17 @@
+{
+  "mint": "Cd8VXseSs7SYZhdQ57EkP7gugDzrGnZhKdfwXeYRjupx",
+  "score": null,
+  "lp_locked_pct": null,
+  "lp_locked_usd": null,
+  "risks": [],
+  "danger_count": null,
+  "warn_count": null,
+  "creator_rugged_before": null,
+  "transfer_fee_pct": null,
+  "insiders_detected": null,
+  "rugged": null,
+  "lockers_count": null,
+  "mint_authority_revoked": true,
+  "updated_utc": null,
+  "status": "pending_first_check"
+}
