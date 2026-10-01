@@ -14,6 +14,8 @@
     --magenta:#E879F9;
     --cyan:#3EE6E8;
     --green:#8CFB5C;
+    --yellow:#FFD166;
+    --danger:#FF5C5C;
     --border:rgba(217,167,255,0.16);
     --warn:#FF8A65;
     --shadow:0 8px 30px rgba(0,0,0,0.5);
@@ -114,6 +116,8 @@
   .stat .k{font-size:11px;text-transform:uppercase;letter-spacing:0.07em;color:var(--text-dim);}
   .stat .v{font-family:'IBM Plex Mono',monospace;font-size:16.5px;margin-top:6px;color:var(--text);}
   .stat .v.green{color:var(--green);}
+  .stat .v.yellow{color:var(--yellow);}
+  .stat .v.red{color:var(--danger);}
   .stat .v.warn{color:var(--warn);}
 
   .roadmap{display:flex;flex-direction:column;gap:0;}
@@ -361,9 +365,41 @@
 
   function cls(key, val){
     if (val === null || val === undefined) return "";
-    if ((key === "rugged" || key === "creator_rugged_before" || key === "insiders_detected") && val) return "warn";
-    if (key === "danger_count" && val > 0) return "warn";
-    if (key === "lp_locked_pct" && val >= 90) return "green";
+    // Booleans: red if the flag is bad, green if it's clean. No middle tier applies.
+    if (key === "rugged" || key === "creator_rugged_before" || key === "insiders_detected") {
+      return val ? "red" : "green";
+    }
+    // RugCheck's own score: higher is safer (confirmed against RugCheck's own "GOOD" label).
+    if (key === "score") {
+      if (val >= 80) return "green";
+      if (val >= 50) return "yellow";
+      return "red";
+    }
+    // LP locked %: more locked liquidity is safer.
+    if (key === "lp_locked_pct") {
+      if (val >= 90) return "green";
+      if (val >= 50) return "yellow";
+      return "red";
+    }
+    // Danger-level risk flags from RugCheck: any at all is worth a second look.
+    if (key === "danger_count") {
+      if (val === 0) return "green";
+      if (val === 1) return "yellow";
+      return "red";
+    }
+    // Lower-severity warning flags: a couple is normal noise, several is not.
+    if (key === "warn_count") {
+      if (val === 0) return "green";
+      if (val <= 2) return "yellow";
+      return "red";
+    }
+    // Transfer tax: 0% is normal, a little is a yellow flag, a lot is a red one.
+    if (key === "transfer_fee_pct") {
+      if (val === 0) return "green";
+      if (val <= 5) return "yellow";
+      return "red";
+    }
+    // lockers_count has no clean good/bad reading pre-graduation on a bonding curve, so leave it uncolored.
     return "";
   }
 
@@ -390,7 +426,7 @@
         '<a href="https://rugcheck.xyz/tokens/' + (d.mint || "") + '" target="_blank" rel="noopener" style="color:var(--cyan);">View the live report on RugCheck &rarr;</a>';
     })
     .catch(function(){
-      document.getElementById("rc-widget").innerHTML = '<div class="stat"><div class="k">Status</div><div class="v warn">Check temporarily unavailable</div></div>';
+      document.getElementById("rc-widget").innerHTML = '<div class="stat"><div class="k">Status</div><div class="v red">Check temporarily unavailable</div></div>';
       document.getElementById("rc-meta").textContent = "";
     });
 })();
