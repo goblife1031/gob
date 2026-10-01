@@ -342,7 +342,7 @@
 <script>
 (function(){
   var LABELS = {
-    score: "RugCheck score",
+    score: "RugCheck risk score (lower = safer)",
     lp_locked_pct: "LP locked",
     danger_count: "Danger flags",
     warn_count: "Warning flags",
@@ -369,10 +369,11 @@
     if (key === "rugged" || key === "creator_rugged_before" || key === "insiders_detected") {
       return val ? "red" : "green";
     }
-    // RugCheck's own score: higher is safer (confirmed against RugCheck's own "GOOD" label).
+    // RugCheck's own score: this is a RISK score, so LOWER is safer (confirmed
+    // directly against RugCheck's API - $GOBB scores 1 and that's their "GOOD" label).
     if (key === "score") {
-      if (val >= 80) return "green";
-      if (val >= 50) return "yellow";
+      if (val <= 33) return "green";
+      if (val <= 66) return "yellow";
       return "red";
     }
     // LP locked %: more locked liquidity is safer.
