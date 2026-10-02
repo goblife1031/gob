@@ -1,7 +1,7 @@
 {
   "score": 1,
   "lp_locked_pct": 100,
-  "lp_locked_usd": 5663.99035023952,
+  "lp_locked_usd": 5664.06107940594,
   "risks": [],
   "danger_count": 0,
   "warn_count": 0,
@@ -12,5 +12,5 @@
   "lockers_count": 0,
   "mint": "Cd8VXseSs7SYZhdQ57EkP7gugDzrGnZhKdfwXeYRjupx",
   "mint_authority_revoked": true,
-  "updated_utc": "2026-10-02T22:22:18Z"
+  "updated_utc": "2026-10-02T23:19:37Z"
 }
