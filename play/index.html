@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Wrath of Gob, Chapter One. A neon pixel-art action game: climb out of the basement, cross a city under siege, and face the dragon Solgorath.">
+<meta property="og:title" content="Wrath of Gob — Chapter One">
+<meta property="og:description" content="Gob climbed out of the basement. Now the city needs him. Play free in your browser.">
+<meta property="og:image" content="https://gobbuild.io/play/assets/art/title.jpg">
+<meta property="og:url" content="https://gobbuild.io/play/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://gobbuild.io/play/assets/art/title.jpg">
+<link rel="icon" href="assets/sprites/gob_down.png">
+<title>Wrath of Gob</title>
+<style>
+  /* Color: dark neon-ruins palette — purple for Gob/heroes, green for the dragon/threat */
+  /* Type: monospace throughout — deliberate "old terminal/arcade cabinet" feel */
+  /* Layout: single centered game viewport, scales to fit any width, letterboxed, no page scroll */
+  :root {
+    --bg: #0d0617;
+    --panel: #1a0e2a;
+    --purple: #7c3ac6;
+    --purple-light: #b07ce6;
+    --green: #5ad678;
+    --ink: #eee7f8;
+    color-scheme: dark;
+  }
+  * { box-sizing: border-box; }
+  html { height: 100%; }
+  body {
+    margin: 0;
+    min-height: 100%;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Courier New', ui-monospace, monospace;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: max(16px, env(safe-area-inset-top, 0px)) 16px max(16px, env(safe-area-inset-bottom, 0px));
+  }
+  h1 {
+    margin: 0;
+    font-size: clamp(16px, 4vw, 22px);
+    letter-spacing: 0.08em;
+    color: var(--purple-light);
+    text-shadow: 0 0 12px rgba(124, 58, 198, 0.6);
+  }
+  #game-wrap {
+    width: min(640px, 100%);
+    aspect-ratio: 4 / 3;
+    border: 2px solid var(--green);
+    box-shadow: 0 0 40px rgba(124, 58, 198, 0.45);
+    background: #000;
+    position: relative;
+  }
+  #game-container { width: 100%; height: 100%; }
+  canvas { display: block; width: 100% !important; height: 100% !important; }
+  p.note {
+    max-width: 640px;
+    width: 100%;
+    margin: 0;
+    font-size: 12px;
+    color: var(--purple-light);
+    opacity: 0.8;
+    text-align: center;
+  }
+</style>
+
+</head>
+<body>
+<h1>WRATH OF GOB — Chapter One</h1>
+<div id="game-wrap"><div id="game-container"></div></div>
+<p class="note">WASD / arrow keys to move · SPACE talk / swing · SHIFT dash · ESC pause · keyboard required</p>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/phaser/3.70.0/phaser.min.js"></script>
+<script src="js/systems/GameState.js"></script>
+<script src="js/systems/Dev.js"></script>
+<script src="js/ui/DialogueBox.js"></script>
+<script src="js/entities/Player.js"></script>
+<script src="js/entities/Slime.js"></script>
+<script src="js/entities/WatchGuard.js"></script>
+<script src="js/entities/Drone.js"></script>
+<script src="js/entities/VendingMachine.js"></script>
+<script src="js/entities/Rat.js"></script>
+<script src="js/entities/RuggBoss.js"></script>
+<script src="js/entities/Gargoyle.js"></script>
+<script src="js/entities/WatchAlly.js"></script>
+<script src="js/scenes/BootScene.js"></script>
+<script src="js/scenes/TitleScene.js"></script>
+<script src="js/scenes/IntroScene.js"></script>
+<script src="js/scenes/AreaScene.js"></script>
+<script src="js/scenes/BasementRowScene.js"></script>
+<script src="js/scenes/NeonMarketScene.js"></script>
+<script src="js/scenes/BridgeScene.js"></script>
+<script src="js/scenes/TowerDistrictScene.js"></script>
+<script src="js/scenes/TowerClimbScene.js"></script>
+<script src="js/scenes/RoofScene.js"></script>
+<script src="js/scenes/EndingScene.js"></script>
+<script src="js/scenes/ComingSoonScene.js"></script>
+<script src="js/scenes/PauseScene.js"></script>
+<script src="js/main.js"></script>
+
+</body>
+</html>
