@@ -13,6 +13,7 @@ class EndingScene extends Phaser.Scene {
 
   create() {
     GameState.ensure(this.registry);
+    Save.markComplete();
     window.__wogScene = this;
     const two = (key, tex, frames, rate) => {
       if (!this.anims.exists(key)) this.anims.create({ key, frames: frames.map((f) => ({ key: tex, frame: f })), frameRate: rate, repeat: -1 });

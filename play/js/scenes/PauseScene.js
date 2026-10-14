@@ -32,6 +32,8 @@ class PauseScene extends Phaser.Scene {
       fontFamily: 'monospace', fontSize: '12px', color: '#eee7f8', lineSpacing: 6,
     }).setOrigin(0.5, 0);
 
+    this.add.text(320, 412, 'Progress saves automatically.', { fontFamily: 'monospace', fontSize: '11px', color: '#8f86a3' }).setOrigin(0.5);
+    this.add.text(320, 430, 'Q  quit to title', { fontFamily: 'monospace', fontSize: '12px', color: '#eee7f8' }).setOrigin(0.5);
     this.add.text(320, 452, 'ESC or SPACE to resume', { fontFamily: 'monospace', fontSize: '12px', color: '#5ad678' }).setOrigin(0.5);
 
     this.devPanel = this.add.container(0, 0);
@@ -45,9 +47,9 @@ class PauseScene extends Phaser.Scene {
     if (!Dev.enabled) return;
     const lines = DEV_JUMPS.map(([k, label]) => `${k}  ${label}`);
     lines.push('', `0  God mode: ${Dev.god ? 'ON' : 'off'}`, '9  Refill hearts', 'type GOBB  turn dev mode off');
-    this.devPanel.add(this.add.rectangle(320, 334, 360, 212, 0x1a0e2a, 0.95).setStrokeStyle(1, 0xffdc78));
-    this.devPanel.add(this.add.text(320, 232, 'DEV', { fontFamily: 'monospace', fontSize: '12px', color: '#ffdc78' }).setOrigin(0.5));
-    this.devPanel.add(this.add.text(170, 246, lines.join('\n'), {
+    this.devPanel.add(this.add.rectangle(320, 312, 360, 180, 0x1a0e2a, 0.95).setStrokeStyle(1, 0xffdc78));
+    this.devPanel.add(this.add.text(320, 230, 'DEV', { fontFamily: 'monospace', fontSize: '12px', color: '#ffdc78' }).setOrigin(0.5));
+    this.devPanel.add(this.add.text(170, 242, lines.join('\n'), {
       fontFamily: 'monospace', fontSize: '11px', color: '#ffdc78', lineSpacing: 3,
     }));
   }
@@ -65,6 +67,7 @@ class PauseScene extends Phaser.Scene {
       }
     }
     if (e.key === 'Escape' || e.key === ' ') { this.resumeGame(); return; }
+    if (e.key === 'q' || e.key === 'Q') { this.quitToTitle(); return; }
     if (!Dev.enabled) return;
     const jump = DEV_JUMPS.find(([k]) => k === e.key);
     if (jump) {
@@ -80,6 +83,18 @@ class PauseScene extends Phaser.Scene {
       if (area && area.player) area.player.setHp(area.player.maxHp);
       this.cameras.main.flash(150, 255, 102, 136);
     }
+  }
+
+  quitToTitle() {
+    if (this.quitting) return;
+    this.quitting = true;
+    Save.write();       // make sure the latest checkpoint is on disk
+    Save.leaveArea();
+    this.cameras.main.fadeOut(400, 6, 4, 12);
+    this.cameras.main.once('camerafadeoutcomplete', () => {
+      this.scene.stop(this.from);
+      this.scene.start('TitleScene');
+    });
   }
 
   resumeGame() {

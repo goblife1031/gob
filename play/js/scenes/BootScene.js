@@ -93,6 +93,7 @@ class BootScene extends Phaser.Scene {
     }
 
     GameState.init(this.registry);
+    Save.attach(this.registry);
     // Dev shortcuts: open the page with #area2 / #area3 / #area4 / #area5 / #roof / #ending to skip ahead.
     const jump = {
       '#area2': 'NeonMarketScene', '#area3': 'BridgeScene', '#area4': 'TowerDistrictScene',

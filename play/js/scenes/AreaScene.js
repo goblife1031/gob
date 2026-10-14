@@ -31,6 +31,7 @@ class AreaScene extends Phaser.Scene {
     this.player.on('noweapon', () => this.floatText(this.player.x, this.player.y - 26, 'Gob has nothing to swing.', '#b07ce6'));
     this.player.on('died', () => this.onPlayerDied());
     this.installPause();
+    Save.enterArea(this.scene.key);
     this.showAreaBanner(kicker, name);
     if (firstHint && typeof firstHint === 'object') this.think(firstHint.think);
     else if (firstHint) this.setHint(firstHint);
